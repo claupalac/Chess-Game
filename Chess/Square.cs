@@ -2,7 +2,7 @@
 
 namespace Chess
 {
-    public class Square
+    public class Square : ISquare
     {
         public Chessman MyChessman { get; set; }
 
@@ -15,6 +15,11 @@ namespace Chess
             this.PositionY = positionY;
             MyChessman = null;
         }
+
+        public Square()
+        {
+            
+        }
         
         public void ShowPosition()
         {
@@ -25,5 +30,7 @@ namespace Chess
         {
             return MyChessman == null;
         }
+
+        
     }
 }

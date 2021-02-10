@@ -66,12 +66,15 @@
         <Compile Include="ChessmanMoves\RookMovement.cs" />
         <Compile Include="Chessmen\Bishop.cs" />
         <Compile Include="Chessmen\Chessman.cs" />
+        <Compile Include="Chessmen\IChessman.cs" />
         <Compile Include="Chessmen\King.cs" />
         <Compile Include="Chessmen\Knight.cs" />
         <Compile Include="Chessmen\Pawn.cs" />
         <Compile Include="Chessmen\Queen.cs" />
         <Compile Include="Chessmen\Rook.cs" />
         <Compile Include="ChessTable.cs" />
+        <Compile Include="Factory.cs" />
+        <Compile Include="ISquare.cs" />
         <Compile Include="Player.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
