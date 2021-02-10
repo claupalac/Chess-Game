@@ -5,7 +5,7 @@ namespace Chess
         Chessman MyChessman { get; set; }
         int PositionX { get; set; }
         int PositionY { get; set; }
-        void ShowPosition();
+        string ShowPosition();
         bool IsEmpty();
         
     }

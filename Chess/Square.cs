@@ -21,9 +21,9 @@ namespace Chess
             
         }
         
-        public void ShowPosition()
+        public string ShowPosition()
         {
-            Console.WriteLine("{0},{1}", PositionX, PositionY);
+            return (PositionX.ToString() + "," + PositionY.ToString());
         }
 
         public bool IsEmpty()
