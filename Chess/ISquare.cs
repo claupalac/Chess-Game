@@ -1,8 +1,10 @@
+using Chess.Factory;
+
 namespace Chess
 {
-    public interface ISquare
+    public interface ISquare : IProduct
     {
-        Chessman MyChessman { get; set; }
+        IChessman MyChessman { get; set; }
         int PositionX { get; set; }
         int PositionY { get; set; }
         string ShowPosition();

@@ -11,13 +11,13 @@ namespace Chess
             isFirstMove = true;
         }
 
-        public override List<Square> GetPossibleMoves(Chessman chessman, ChessTable chessTable)
+        public override List<ISquare> GetPossibleMoves(Chessman chessman, ChessTable chessTable)
         {
-            List<Square> possibleMoves = new List<Square>();
+            List<ISquare> possibleMoves = new List<ISquare>();
 
             foreach (IBasicMove aBasicMove in _myMoves)
             {
-                Square nextPossibleSquare = aBasicMove.GetNextSquare(chessman, chessTable);
+                ISquare nextPossibleSquare = aBasicMove.GetNextSquare(chessman, chessTable);
 
                 if (isFirstMove)
                 {

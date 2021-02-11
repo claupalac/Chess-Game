@@ -2,7 +2,7 @@ namespace Chess
 {
     public interface IChessman
     {
-        Square MySquare { get; set; }
+        ISquare MySquare { get; set; }
         ChessmanMovement GetMovement();
     }
 }

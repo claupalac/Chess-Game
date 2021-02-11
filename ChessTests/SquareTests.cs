@@ -41,9 +41,9 @@ namespace ChessTests
         }
 
         [Fact]
-        void MyChessman_WithFakeChessman_ShouldReturnSameChessman()
+        void MyChessman_WithNotNullChessman_ShouldReturnSameChessman()
         {
-            var mock = new Mock<Chessman>();
+            var mock = new Mock<IChessman>();
 
             _square.MyChessman = mock.Object;
             
@@ -63,7 +63,7 @@ namespace ChessTests
         }
 
         [Fact]
-        void IsEmpty_WithSquareFilled_ShouldReturnFalse()
+        void IsEmpty_WithSquareContainingAChessman_ShouldReturnFalse()
         {
             var chessmanMock = new Mock<Chessman>();
             _square.MyChessman = chessmanMock.Object;

@@ -11,11 +11,11 @@ namespace Chess
             this._myMoves = new List<IBasicMove>();
         }
 
-        public abstract List<Square> GetPossibleMoves(Chessman chessman, ChessTable chessTable);
+        public abstract List<ISquare> GetPossibleMoves(Chessman chessman, ChessTable chessTable);
 
         public void ShowPossibleMoves(Chessman chessman, ChessTable chessTable)
         {
-            foreach (Square aMove in GetPossibleMoves(chessman,chessTable))
+            foreach (ISquare aMove in GetPossibleMoves(chessman,chessTable))
             {
                 aMove.ShowPosition();
             }

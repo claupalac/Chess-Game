@@ -4,7 +4,7 @@ namespace Chess
 {
     public abstract class Chessman : IChessman
     {
-        public Square MySquare { get; set; }
+        public ISquare MySquare { get; set; }
         protected ChessmanMovement myMoves;
 
         protected Chessman( )

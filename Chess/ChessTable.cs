@@ -1,4 +1,5 @@
 ﻿using System;
+using Chess.Factory;
 
 namespace Chess
 {
@@ -9,13 +10,15 @@ namespace Chess
         int GetColumnLimit();
         int GetRowLimit();
         bool IsValidPosition(int positionX, int positionY);
-        Square PutChessman(Chessman chessman, int positionX, int positionY);
-        Square GetSquare(int posX, int posY);
+        ISquare PutChessman(Chessman chessman, int positionX, int positionY);
+        ISquare GetSquare(int posX, int posY);
+        
+        
     }
 
     public class ChessTable : IChessTable
     {
-        private Square[,] _chessTable;
+        private ISquare[,] _chessTable;
         private  int _columnLimit;
         private  int _rowLimit;
 
@@ -27,7 +30,7 @@ namespace Chess
             }
             this._columnLimit = columnLimit;
             this._rowLimit = rowLimit;
-            this._chessTable = new Square[columnLimit,rowLimit];
+            this._chessTable = new ISquare[columnLimit,rowLimit];
             FillChessTable();
         }
 
@@ -62,7 +65,10 @@ namespace Chess
             {
                 for (int j = 0; j < _rowLimit; j++)
                 {
-                    _chessTable[i, j] = (Square) Factory.CreateSquare(i,j);
+                   var aSquare = new SquareCreator().FactoryMethod();
+                   aSquare.PositionX = i;
+                   aSquare.PositionY = j;
+                    _chessTable[i, j] = aSquare;
                 }
             }
         }
@@ -76,7 +82,7 @@ namespace Chess
             else return false;
         }
 
-        public Square PutChessman(Chessman chessman, int positionX, int positionY)
+        public ISquare PutChessman(Chessman chessman, int positionX, int positionY)
         {
             if (!IsValidPosition(positionX, positionY) || !_chessTable[positionX, positionY].IsEmpty())
             {
@@ -84,10 +90,10 @@ namespace Chess
             }
             _chessTable[positionX, positionY].MyChessman = chessman;
             chessman.MySquare = _chessTable[positionX, positionY];
-            return _chessTable[positionX, positionY];
+            return  _chessTable[positionX, positionY];
         }
 
-        public Square GetSquare(int posX, int posY)
+        public ISquare GetSquare(int posX, int posY)
         {
             return _chessTable[posX,posY];
         }

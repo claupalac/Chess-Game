@@ -24,8 +24,8 @@ namespace ChessTests
         {
             int columnLimit = 8;
             int expected = 8;
+            _chessTable = new ChessTable(columnLimit, columnLimit);
             
-            _chessTable.SetColumnLimit(columnLimit);
             int actual = _chessTable.GetColumnLimit();
 
             Assert.Equal(expected, actual);
@@ -34,12 +34,11 @@ namespace ChessTests
         [Theory]
         [InlineData(8, 8)]
         [InlineData(23, 23)]
-        [InlineData(65321, 65321)]
         void GetRowLimit_withPositiveRowLimits_ShouldReturnSameValue(int rowLimit,int expected)
         {
-            ChessTable chessTable = new ChessTable(10, rowLimit);
+            _chessTable = new ChessTable(10, rowLimit);
 
-            int actual = chessTable.GetRowLimit();
+            int actual = _chessTable.GetRowLimit();
             
             Assert.Equal(expected,actual);
         }
@@ -67,7 +66,7 @@ namespace ChessTests
         }
 
         [Fact]
-        public void PutChessman_WithValidChessmanPositionAnd8x8Table_ShouldReturnTheSameChessmanFromChessTable()
+        public void PutChessman_WithValidChessmanPositionAndSimetricTable_ShouldReturnTheSameChessmanFromChessTable()
         {
             _chessTable = new ChessTable(8, 8);
             int posX = 5;

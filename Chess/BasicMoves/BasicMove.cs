@@ -3,6 +3,11 @@
     public abstract class BasicMove : IBasicMove
     {
         protected int _nextPositionX;
+
+        public int NextPositionX => _nextPositionX;
+
+        public int NextPositionY => _nextPositionY;
+
         protected int _nextPositionY;
         private Chessman _chessman;
         private ChessTable _chessTable;
@@ -18,7 +23,7 @@
             _chessman = chessman;
         }
 
-        public Square GetNextSquare(Chessman chessman, ChessTable chessTable)
+        public ISquare GetNextSquare(Chessman chessman, ChessTable chessTable)
         {
             SetMove(chessman,chessTable);
             SetChange();

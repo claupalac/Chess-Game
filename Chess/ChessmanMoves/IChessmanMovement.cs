@@ -4,6 +4,6 @@ namespace Chess
 {
     public interface IChessmanMovement
     {
-        List<Square> GetPossibleMoves(Chessman chessman, ChessTable chessTable);
+        List<ISquare> GetPossibleMoves(Chessman chessman, ChessTable chessTable);
     }
 }

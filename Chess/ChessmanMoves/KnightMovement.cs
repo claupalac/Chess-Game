@@ -15,13 +15,13 @@ namespace Chess
             _myMoves.Add(new MoveBackwardLeftKnight());
             _myMoves.Add(new MoveBackwardRightKnight());
         }
-        public override List<Square> GetPossibleMoves(Chessman chessman, ChessTable chessTable)
+        public override List<ISquare> GetPossibleMoves(Chessman chessman, ChessTable chessTable)
         {
-            List<Square> possibleMoves = new List<Square>();
+            List<ISquare> possibleMoves = new List<ISquare>();
 
             foreach (IBasicMove aBasicMove in _myMoves)
             {
-                Square nextPossibleSquare = aBasicMove.GetNextSquare(chessman, chessTable);
+                ISquare nextPossibleSquare = aBasicMove.GetNextSquare(chessman, chessTable);
                 while (nextPossibleSquare != null)
                 {
                     possibleMoves.Add(nextPossibleSquare);

@@ -4,7 +4,7 @@ namespace Chess
 {
     public class Square : ISquare
     {
-        public Chessman MyChessman { get; set; }
+        public IChessman MyChessman { get; set; }
 
         public int PositionX { get; set; }
         public int PositionY { get; set; }
