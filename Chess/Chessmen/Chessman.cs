@@ -5,13 +5,16 @@ namespace Chess
     public abstract class Chessman : IChessman
     {
         public ISquare MySquare { get; set; }
-        protected ChessmanMovement myMoves;
+        protected IChessmanMovement myMoves;
 
-        protected Chessman( )
+        protected Chessman(IChessmanMovement moves)
         {
+            myMoves = moves;
         }
 
-        public ChessmanMovement GetMovement()
+       
+
+        public IChessmanMovement GetMovement()
         {
             return myMoves;
         }

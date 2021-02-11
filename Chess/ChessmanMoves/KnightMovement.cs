@@ -15,7 +15,7 @@ namespace Chess
             _myMoves.Add(new MoveBackwardLeftKnight());
             _myMoves.Add(new MoveBackwardRightKnight());
         }
-        public override List<ISquare> GetPossibleMoves(Chessman chessman, ChessTable chessTable)
+        public override List<ISquare> GetPossibleMoves(IChessman chessman, IChessTable chessTable)
         {
             List<ISquare> possibleMoves = new List<ISquare>();
 
@@ -25,7 +25,7 @@ namespace Chess
                 while (nextPossibleSquare != null)
                 {
                     possibleMoves.Add(nextPossibleSquare);
-                    Chessman knightShodow = new Knight();
+                    Chessman knightShodow = new Knight(new KingMovement());
                     knightShodow.MySquare = nextPossibleSquare;
                     nextPossibleSquare = aBasicMove.GetNextSquare(knightShodow, chessTable);
                 }

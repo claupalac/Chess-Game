@@ -12,7 +12,7 @@ namespace Chess
             _myMoves.Add(new MoveForwardLeft());
         }
 
-        public override List<ISquare> GetPossibleMoves(Chessman chessman, ChessTable chessTable)
+        public override List<ISquare> GetPossibleMoves(IChessman chessman, IChessTable chessTable)
         {
             List<ISquare> possibleMoves = new List<ISquare>();
 
@@ -22,7 +22,7 @@ namespace Chess
                 while (nextPossibleSquare != null)
                 {
                     possibleMoves.Add(nextPossibleSquare);
-                    Chessman queenShadow = new Queen();
+                    Chessman queenShadow = new Queen(new BishopMovement());
                     queenShadow.MySquare = nextPossibleSquare;
                     nextPossibleSquare = aBasicMove.GetNextSquare(queenShadow, chessTable);
                 }

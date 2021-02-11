@@ -19,14 +19,20 @@ namespace ChessTests
         }
 
         [Fact]
-        void GetMovement_WithBishopInstance_ShouldReturnChessmanMovementInstance()
+        void GetMovement_WithAValidChessmanMovement_ShouldReturnTheSameChessmanMovement()
         {
-            IChessman achessman = new Bishop();
-            IChessmanMovement expected = new BishopMovement();
+            var mock = new Mock<IChessmanMovement>();
+            ChessmanTestClass chessman= new ChessmanTestClass(mock.Object);
 
-            ChessmanMovement actual = achessman.GetMovement();
-            
-            Assert.Equal(expected, actual));
+            var actual = chessman.GetMovement();
+            Assert.Equal(mock.Object, actual);
+        }
+        
+        public class ChessmanTestClass : Chessman
+        {
+            public ChessmanTestClass(IChessmanMovement moves) : base(moves)
+            {
+            }
         }
     }
 }

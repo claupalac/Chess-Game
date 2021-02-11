@@ -17,7 +17,7 @@ namespace Chess
             _myMoves.Add(new MoveForwardRight());
         }
 
-        public override List<ISquare> GetPossibleMoves(Chessman chessman, ChessTable chessTable)
+        public override List<ISquare> GetPossibleMoves(IChessman chessman, IChessTable chessTable)
         {
             List<ISquare> possibleMoves = new List<ISquare>();
             foreach (IBasicMove aBasicMove in _myMoves)

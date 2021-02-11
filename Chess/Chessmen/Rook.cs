@@ -2,9 +2,8 @@ namespace Chess
 {
     public class Rook : Chessman
     {
-        public Rook()
+        public Rook(IChessmanMovement moves) : base(moves)
         {
-            myMoves = new RookMovement();
         }
     }
 }

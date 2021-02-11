@@ -73,7 +73,7 @@ namespace ChessTests
             int posY = 4;
             var mock = new Mock<Chessman>();
             
-            Square actual = _chessTable.PutChessman(mock.Object, posX, posY);
+            ISquare actual = _chessTable.PutChessman(mock.Object, posX, posY);
             
             Assert.Equal(mock.Object,actual.MyChessman);
         }

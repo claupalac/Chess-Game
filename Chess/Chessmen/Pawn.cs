@@ -2,9 +2,8 @@ namespace Chess
 {
     public class Pawn : Chessman
     {
-        public Pawn()
+        public Pawn(IChessmanMovement moves) : base(moves)
         {
-            myMoves = new PawnMovement();
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Chess
 
         public void ShowMovesFromChessman(Chessman chessman, ChessTable chessTable)
         {
-            ChessmanMovement theMoves = chessman.GetMovement();
+            IChessmanMovement theMoves = chessman.GetMovement();
             theMoves.ShowPossibleMoves(chessman,chessTable);
         }
     }

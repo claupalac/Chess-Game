@@ -1,16 +1,16 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/Highlighting/HighlightingSourceSnapshotLocation/@EntryValue">/Users/claudio/Library/Caches/JetBrains/Rider2020.3/resharper-host/temp/Rider/vAny/CoverageData/_ChessSolution.1866905859/Snapshot/snapshot.utdcvr</s:String>
 	
 	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fd4ba509_002Da94b_002D4fd8_002Db54c_002D372036da9a2b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;Or&gt;
-    &lt;Not&gt;
-      &lt;TestAncestor&gt;
-        &lt;TestId&gt;xUnit::682E0396-5D4D-42C6-B4AA-C0A825D55EC0::.NETFramework,Version=v4.8::ChessTests.ChessTableTest.GetColumnLimit_WithMaxAndMinValues_ShouldReturnSameValue&lt;/TestId&gt;
-      &lt;/TestAncestor&gt;
-    &lt;/Not&gt;
-    &lt;TestAncestor&gt;
-      &lt;TestId&gt;xUnit::682E0396-5D4D-42C6-B4AA-C0A825D55EC0::.NETFramework,Version=v4.8::ChessTests.ChessTableTest.GetColumnLimit_WithMaxAndMinValues_ShouldReturnSameValue&lt;/TestId&gt;
-    &lt;/TestAncestor&gt;
-  &lt;/Or&gt;
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=fd4ba509_002Da94b_002D4fd8_002Db54c_002D372036da9a2b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;Not&gt;&#xD;
+      &lt;TestAncestor&gt;&#xD;
+        &lt;TestId&gt;xUnit::682E0396-5D4D-42C6-B4AA-C0A825D55EC0::.NETFramework,Version=v4.8::ChessTests.ChessTableTest.GetColumnLimit_WithMaxAndMinValues_ShouldReturnSameValue&lt;/TestId&gt;&#xD;
+      &lt;/TestAncestor&gt;&#xD;
+    &lt;/Not&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;xUnit::682E0396-5D4D-42C6-B4AA-C0A825D55EC0::.NETFramework,Version=v4.8::ChessTests.ChessTableTest.GetColumnLimit_WithMaxAndMinValues_ShouldReturnSameValue&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+  &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

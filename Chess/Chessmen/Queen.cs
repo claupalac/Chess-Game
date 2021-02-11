@@ -2,9 +2,8 @@ namespace Chess
 {
     public class Queen : Chessman
     {
-        public Queen()
+        public Queen(IChessmanMovement moves) : base(moves)
         {
-            myMoves = new QueenMovement();
         }
     }
 }

@@ -28,6 +28,20 @@ namespace ChessTests
 
             Assert.Equal(expected,actual);
         }
+        [Fact]
+        void PositionX_WithNegativeNumbers_ShouldReturnException()
+        {
+            int value = -10;
+           
+            Assert.Throws<ArgumentException>(()=> _square.PositionX = value);
+        }
+        [Fact]
+        void PositionY_WithNegativeNumbers_ShouldReturnException()
+        {
+            int value = -10;
+           
+            Assert.Throws<ArgumentException>(()=> _square.PositionY = value);
+        }
         
         [Fact]
         void PositionY_WithPositiveNumbers_ShouldReturnSameValue()

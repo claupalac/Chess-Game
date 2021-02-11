@@ -11,7 +11,7 @@ namespace Chess
             isFirstMove = true;
         }
 
-        public override List<ISquare> GetPossibleMoves(Chessman chessman, ChessTable chessTable)
+        public override List<ISquare> GetPossibleMoves(IChessman chessman, IChessTable chessTable)
         {
             List<ISquare> possibleMoves = new List<ISquare>();
 
@@ -25,7 +25,7 @@ namespace Chess
                     while (nextPossibleSquare != null && limitSteps < 2)
                     {
                         possibleMoves.Add(nextPossibleSquare);
-                        Chessman chessmanShadow = new Pawn();
+                        Chessman chessmanShadow = new Pawn(new PawnMovement());
                         chessmanShadow.MySquare = nextPossibleSquare;
                         nextPossibleSquare = aBasicMove.GetNextSquare(chessmanShadow, chessTable);
                         limitSteps++;

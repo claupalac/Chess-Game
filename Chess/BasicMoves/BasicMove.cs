@@ -9,13 +9,13 @@
         public int NextPositionY => _nextPositionY;
 
         protected int _nextPositionY;
-        private Chessman _chessman;
-        private ChessTable _chessTable;
+        private IChessman _chessman;
+        private IChessTable _chessTable;
         protected BasicMove()
         {
             
         }
-        public void SetMove(Chessman chessman, ChessTable chessTable)
+        public void SetMove(IChessman chessman, IChessTable chessTable)
         {
             this._nextPositionX = chessman.MySquare.PositionX;
             this._nextPositionY = chessman.MySquare.PositionY;
@@ -23,7 +23,7 @@
             _chessman = chessman;
         }
 
-        public ISquare GetNextSquare(Chessman chessman, ChessTable chessTable)
+        public ISquare GetNextSquare(IChessman chessman, IChessTable chessTable)
         {
             SetMove(chessman,chessTable);
             SetChange();

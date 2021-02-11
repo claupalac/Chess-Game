@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Chess
 {
@@ -11,13 +12,13 @@ namespace Chess
             this._myMoves = new List<IBasicMove>();
         }
 
-        public abstract List<ISquare> GetPossibleMoves(Chessman chessman, ChessTable chessTable);
+        public abstract List<ISquare> GetPossibleMoves(IChessman chessman, IChessTable chessTable);
 
-        public void ShowPossibleMoves(Chessman chessman, ChessTable chessTable)
+        public void ShowPossibleMoves(IChessman chessman, IChessTable chessTable)
         {
             foreach (ISquare aMove in GetPossibleMoves(chessman,chessTable))
             {
-                aMove.ShowPosition();
+                Console.WriteLine(aMove.ShowPosition());
             }
         }
     }
