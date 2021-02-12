@@ -38,8 +38,7 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="BasicMoves\BasicMove.cs" />
-        <Compile Include="BasicMoves\IBasicMove.cs" />
+        <Compile Include="BasicMoves\IMove.cs" />
         <Compile Include="BasicMoves\KnightBasicMoves\MoveBackwardLeftKnight.cs" />
         <Compile Include="BasicMoves\KnightBasicMoves\MoveBackwardRightKnight.cs" />
         <Compile Include="BasicMoves\KnightBasicMoves\MoveForwardLeftKnight.cs" />
@@ -48,6 +47,7 @@
         <Compile Include="BasicMoves\KnightBasicMoves\MoveLeftForwardKnight.cs" />
         <Compile Include="BasicMoves\KnightBasicMoves\MoveRightBackwardKnight.cs" />
         <Compile Include="BasicMoves\KnightBasicMoves\MoveRightForwardKnight.cs" />
+        <Compile Include="BasicMoves\Move.cs" />
         <Compile Include="BasicMoves\MoveBackward.cs" />
         <Compile Include="BasicMoves\MoveBackwardLeft.cs" />
         <Compile Include="BasicMoves\MoveBackwardRight.cs" />
@@ -75,12 +75,10 @@
         <Compile Include="ChessTable.cs" />
         <Compile Include="Factory\Creator.cs" />
         <Compile Include="Factory\IProduct.cs" />
-        <Compile Include="Factory\SquareCreator.cs" />
-        <Compile Include="ISquare.cs" />
+        <Compile Include="IChessTable.cs" />
         <Compile Include="Player.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="Square.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

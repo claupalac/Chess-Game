@@ -1,14 +1,15 @@
-﻿namespace Chess
+﻿using System;
+
+namespace Chess
 {
     internal class Program
     {
         public static void Main(string[] args)
         {
-            ChessTable chessTable = new ChessTable(8,8);
-            King king = new King( new KingMovement());
-            chessTable.PutChessman(king,1,1);
-            Player player1 = new Player();
-            player1.ShowMovesFromChessman(king,chessTable);
+            var arr = new int[2];
+            arr[0] = 2;
+            arr[1] = 3;
+            
         }
     }
 }

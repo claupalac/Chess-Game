@@ -1,15 +1,13 @@
 ﻿namespace Chess
 {
-    public class MoveBackward : BasicMove
+    public class MoveBackward : Move
     {
-        public MoveBackward() : base()
+        public override int[] GetMove(int[] originalPosition)
         {
+            int[] newPosition = originalPosition;
+            newPosition[PositionY] = originalPosition[PositionY]++;
             
-        }
-
-        public override void SetChange()
-        {
-            _nextPositionY--;
+            return newPosition;
         }
     }
 }
