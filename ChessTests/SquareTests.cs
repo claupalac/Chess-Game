@@ -79,7 +79,7 @@ namespace ChessTests
         [Fact]
         void IsEmpty_WithSquareContainingAChessman_ShouldReturnFalse()
         {
-            var chessmanMock = new Mock<Chessman>();
+            var chessmanMock = new Mock<IChessman>();
             _square.MyChessman = chessmanMock.Object;
             
             bool actual = _square.IsEmpty();

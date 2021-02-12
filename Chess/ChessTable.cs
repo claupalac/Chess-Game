@@ -10,7 +10,7 @@ namespace Chess
         int GetColumnLimit();
         int GetRowLimit();
         bool IsValidPosition(int positionX, int positionY);
-        ISquare PutChessman(Chessman chessman, int positionX, int positionY);
+        ISquare PutChessman(IChessman chessman, int positionX, int positionY);
         ISquare GetSquare(int posX, int posY);
         
         
@@ -82,7 +82,7 @@ namespace Chess
             else return false;
         }
 
-        public ISquare PutChessman(Chessman chessman, int positionX, int positionY)
+        public ISquare PutChessman(IChessman chessman, int positionX, int positionY)
         {
             if (!IsValidPosition(positionX, positionY) || !_chessTable[positionX, positionY].IsEmpty())
             {
