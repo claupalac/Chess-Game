@@ -110,12 +110,10 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="BasicMoveTests.cs" />
-        <Compile Include="ChessmanTests.cs" />
         <Compile Include="ChessTableTest.cs" />
-        <Compile Include="KingMovementTest.cs" />
+        <Compile Include="MoveForwardTest.cs" />
+        <Compile Include="PositionTest.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="SquareTests.cs" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Chess\Chess.csproj">

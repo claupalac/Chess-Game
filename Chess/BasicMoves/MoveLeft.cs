@@ -4,8 +4,10 @@
     {
         public IPosition GetMove(IPosition originalPosition)
         {
-            originalPosition.PositionX = originalPosition.PositionX--;
-            return originalPosition;
+            IPosition newPosition = new Position();
+            newPosition.PositionY = originalPosition.PositionY;
+            newPosition.PositionX = originalPosition.PositionX - 1;
+            return newPosition;
         }
     }
 }

@@ -2,7 +2,7 @@ namespace Chess
 {
     public class Rook : IChessman
     {
-        public IChessmanMovement MyPlays()
+        public IChessmanMovement Play()
         {
             return new RookMovement();
         }

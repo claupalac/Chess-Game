@@ -4,9 +4,10 @@ namespace Chess
     {
         public IPosition GetMove(IPosition originalPosition)
         {
-            originalPosition.PositionY = originalPosition.PositionY + 2;
-            originalPosition.PositionX = originalPosition.PositionX - 1;
-            return originalPosition;
+            IPosition newPosition = new Position();
+            newPosition.PositionY = originalPosition.PositionY + 2;
+            newPosition.PositionX = originalPosition.PositionX - 1;
+            return newPosition;
         }
     }
 }

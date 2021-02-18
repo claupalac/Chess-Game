@@ -38,6 +38,13 @@ namespace Chess
                     RowLimit = rowLimit;
                     _chessTable = new IChessman[ColumnLimit,RowLimit];
                 }
+
+         public ChessTable()
+         {
+             ColumnLimit = 8;
+             RowLimit = 8;
+             _chessTable = new IChessman[ColumnLimit,RowLimit];
+         }
          
         public bool IsValidPosition(IPosition position)
         {

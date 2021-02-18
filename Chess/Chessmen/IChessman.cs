@@ -2,6 +2,6 @@ namespace Chess
 {
     public interface IChessman
     {
-        IChessmanMovement MyPlays();
+        IChessmanMovement Play();
     }
 }

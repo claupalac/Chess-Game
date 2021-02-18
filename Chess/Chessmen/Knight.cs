@@ -2,7 +2,7 @@ namespace Chess
 {
     public class Knight : IChessman
     {
-        public IChessmanMovement MyPlays()
+        public IChessmanMovement Play()
         {
             return new KnightMovement();
         }

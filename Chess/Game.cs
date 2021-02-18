@@ -22,7 +22,7 @@ namespace Chess
 
         public void ShowMoves(IChessman chessman)
         {
-            IChessmanMovement chessmanMovement = chessman.MyPlays();
+            IChessmanMovement chessmanMovement = chessman.Play();
             IPosition fromPosition = _chessmansDictionary[chessman];
             foreach (var position in chessmanMovement.GetPossibleMoves(fromPosition,ChessTable))
             {
