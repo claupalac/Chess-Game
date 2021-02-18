@@ -1,16 +1,12 @@
 ﻿namespace Chess
 {
-    public class MoveBackwardRight : BasicMove
+    public class MoveBackwardRight : IMove
     {
-        public MoveBackwardRight() : base()
+        public IPosition GetMove(IPosition originalPosition)
         {
-          
-        }
-
-        public override void SetChange()
-        {
-            _nextPositionX++;
-            _nextPositionY--;
+            originalPosition.PositionY = originalPosition.PositionY--;
+            originalPosition.PositionX = originalPosition.PositionX++;
+            return originalPosition;
         }
     }
 }

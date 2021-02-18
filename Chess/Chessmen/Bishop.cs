@@ -1,9 +1,10 @@
 namespace Chess
 {
-    public class Bishop : Chessman
+    public class Bishop : IChessman
     {
-        public Bishop(IChessmanMovement moves) : base(moves)
+        public IChessmanMovement MyPlays()
         {
+            return new BishopMovement();
         }
     }
 }

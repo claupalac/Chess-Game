@@ -6,31 +6,29 @@ namespace Chess
     {
         public QueenMovement()
         {
-            _myMoves.Add( new MoveForward());
-            _myMoves.Add(new MoveForwardRight());
-            _myMoves.Add(new MoveRight());
-            _myMoves.Add(new MoveBackwardRight());
-            _myMoves.Add(new MoveBackward());
-            _myMoves.Add(new MoveBackwardLeft());
-            _myMoves.Add(new MoveLeft());
-            _myMoves.Add(new MoveForwardLeft());
+            moves.Add( new MoveForward());
+            moves.Add(new MoveForwardRight());
+            moves.Add(new MoveRight());
+            moves.Add(new MoveBackwardRight());
+            moves.Add(new MoveBackward());
+            moves.Add(new MoveBackwardLeft());
+            moves.Add(new MoveLeft());
+            moves.Add(new MoveForwardLeft());
            
         }
-        public override List<ISquare> GetPossibleMoves(IChessman chessman, IChessTable chessTable)
+        public override List<IPosition> GetPossibleMoves(IPosition oPosition, IChessTable chessTable)
         {
-            List<ISquare> possibleMoves = new List<ISquare>();
-
-            foreach (IBasicMove aBasicMove in _myMoves)
+            List<IPosition> possibleMoves = new List<IPosition>();
+            foreach (var aMove in moves)
             {
-                ISquare nextPossibleSquare = aBasicMove.GetNextSquare(chessman, chessTable);
-                while (nextPossibleSquare != null)
+                IPosition nextPosition = aMove.GetMove(oPosition);
+                while (chessTable.IsValidPosition(nextPosition))
                 {
-                    possibleMoves.Add(nextPossibleSquare);
-                    Chessman queenShadow = new Queen(new QueenMovement());
-                    queenShadow.MySquare = nextPossibleSquare;
-                    nextPossibleSquare = aBasicMove.GetNextSquare(queenShadow, chessTable);
+                    possibleMoves.Add(nextPosition);
+                    nextPosition = aMove.GetMove(nextPosition);
                 }
             }
+
             return possibleMoves;
         }
     }

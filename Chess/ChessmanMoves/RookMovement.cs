@@ -6,26 +6,24 @@ namespace Chess
     {
         public RookMovement()
         {
-            _myMoves.Add(new MoveForward());
-            _myMoves.Add(new MoveRight());
-            _myMoves.Add(new MoveBackward());
-            _myMoves.Add(new MoveLeft());
+            moves.Add(new MoveForward());
+            moves.Add(new MoveRight());
+            moves.Add(new MoveBackward());
+            moves.Add(new MoveLeft());
         }
-        public override List<ISquare> GetPossibleMoves(IChessman chessman, IChessTable chessTable)
+        public override List<IPosition> GetPossibleMoves(IPosition oPosition, IChessTable chessTable)
         {
-            List<ISquare> possibleMoves = new List<ISquare>();
-
-            foreach (IBasicMove aBasicMove in _myMoves)
+            List<IPosition> possibleMoves = new List<IPosition>();
+            foreach (var aMove in moves)
             {
-                ISquare nextPossibleSquare = aBasicMove.GetNextSquare(chessman, chessTable);
-                while (nextPossibleSquare != null)
+                IPosition nextPosition = aMove.GetMove(oPosition);
+                while (chessTable.IsValidPosition(nextPosition))
                 {
-                    possibleMoves.Add(nextPossibleSquare);
-                    Chessman rookShadow = new Rook(new RookMovement());
-                    rookShadow.MySquare = nextPossibleSquare;
-                    nextPossibleSquare = aBasicMove.GetNextSquare(rookShadow, chessTable);
+                    possibleMoves.Add(nextPosition);
+                    nextPosition = aMove.GetMove(nextPosition);
                 }
             }
+
             return possibleMoves;
         }
     }

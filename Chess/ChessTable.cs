@@ -39,20 +39,20 @@ namespace Chess
                     _chessTable = new IChessman[ColumnLimit,RowLimit];
                 }
          
-        public bool IsValidPosition(int positionX, int positionY)
+        public bool IsValidPosition(IPosition position)
         {
-            if (positionX >= 0 && positionX < ColumnLimit && positionY < RowLimit && positionY >= 0)
+            if (position.PositionX >= 0 && position.PositionX < ColumnLimit && position.PositionY < RowLimit && position.PositionY >= 0)
             {
-                return _chessTable[positionX, positionY] == null;
+                return _chessTable[position.PositionX, position.PositionY] == null;
             }
             else return false;
         }
         
-        public void SetChessman(IChessman chessman, int posX, int posY)
+        public void SetChessman(IChessman chessman, IPosition position)
         {
-            if (IsValidPosition(posX,posY))
+            if (IsValidPosition(position))
             {
-                _chessTable[posX, posY] = chessman;
+                _chessTable[position.PositionX, position.PositionY] = chessman;
             }
             else
                 throw new ArgumentException("Invalid action");

@@ -4,38 +4,29 @@ namespace Chess
 {
     public class PawnMovement : ChessmanMovement
     {
-        private bool isFirstMove;
+        private readonly bool _isFirstMove;
         public PawnMovement()
         {
-            _myMoves.Add(new MoveForward());
-            isFirstMove = true;
+            moves.Add(new MoveForward());
+            _isFirstMove = true;
         }
-
-        public override List<ISquare> GetPossibleMoves(IChessman chessman, IChessTable chessTable)
+        public override List<IPosition> GetPossibleMoves(IPosition oPosition, IChessTable chessTable)
         {
-            List<ISquare> possibleMoves = new List<ISquare>();
-
-            foreach (IBasicMove aBasicMove in _myMoves)
+            List<IPosition> possibleMoves = new List<IPosition>();
+            foreach (var aMove in moves)
             {
-                ISquare nextPossibleSquare = aBasicMove.GetNextSquare(chessman, chessTable);
-
-                if (isFirstMove)
+                IPosition nextPosition = aMove.GetMove(oPosition);
+                if (chessTable.IsValidPosition(nextPosition))
                 {
-                    int limitSteps = 0;
-                    while (nextPossibleSquare != null && limitSteps < 2)
+                    possibleMoves.Add(nextPosition);
+                    nextPosition = aMove.GetMove(nextPosition);
+                    if (_isFirstMove && chessTable.IsValidPosition(nextPosition))
                     {
-                        possibleMoves.Add(nextPossibleSquare);
-                        Chessman chessmanShadow = new Pawn(new PawnMovement());
-                        chessmanShadow.MySquare = nextPossibleSquare;
-                        nextPossibleSquare = aBasicMove.GetNextSquare(chessmanShadow, chessTable);
-                        limitSteps++;
+                        possibleMoves.Add(nextPosition);
                     }
                 }
-                else
-                {
-                    possibleMoves.Add(nextPossibleSquare);
-                }
             }
+
             return possibleMoves;
         }
     }

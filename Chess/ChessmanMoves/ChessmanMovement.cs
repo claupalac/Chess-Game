@@ -5,21 +5,11 @@ namespace Chess
 {
     public abstract class ChessmanMovement : IChessmanMovement
     {
-        protected List<IBasicMove> _myMoves;
-
+        protected List<IMove> moves;
         public ChessmanMovement()
         {
-            this._myMoves = new List<IBasicMove>();
+            moves = new List<IMove>();
         }
-
-        public abstract List<ISquare> GetPossibleMoves(IChessman chessman, IChessTable chessTable);
-
-        public void ShowPossibleMoves(IChessman chessman, IChessTable chessTable)
-        {
-            foreach (ISquare aMove in GetPossibleMoves(chessman,chessTable))
-            {
-                Console.WriteLine(aMove.ShowPosition());
-            }
-        }
+        public abstract List<IPosition> GetPossibleMoves(IPosition oPosition, IChessTable chessTable);
     }
 }

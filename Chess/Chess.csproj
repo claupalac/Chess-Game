@@ -47,7 +47,6 @@
         <Compile Include="BasicMoves\KnightBasicMoves\MoveLeftForwardKnight.cs" />
         <Compile Include="BasicMoves\KnightBasicMoves\MoveRightBackwardKnight.cs" />
         <Compile Include="BasicMoves\KnightBasicMoves\MoveRightForwardKnight.cs" />
-        <Compile Include="BasicMoves\Move.cs" />
         <Compile Include="BasicMoves\MoveBackward.cs" />
         <Compile Include="BasicMoves\MoveBackwardLeft.cs" />
         <Compile Include="BasicMoves\MoveBackwardRight.cs" />
@@ -65,7 +64,6 @@
         <Compile Include="ChessmanMoves\QueenMovement.cs" />
         <Compile Include="ChessmanMoves\RookMovement.cs" />
         <Compile Include="Chessmen\Bishop.cs" />
-        <Compile Include="Chessmen\Chessman.cs" />
         <Compile Include="Chessmen\IChessman.cs" />
         <Compile Include="Chessmen\King.cs" />
         <Compile Include="Chessmen\Knight.cs" />
@@ -75,8 +73,11 @@
         <Compile Include="ChessTable.cs" />
         <Compile Include="Factory\Creator.cs" />
         <Compile Include="Factory\IProduct.cs" />
+        <Compile Include="Factory\PositionCreator.cs" />
+        <Compile Include="Game.cs" />
         <Compile Include="IChessTable.cs" />
-        <Compile Include="Player.cs" />
+        <Compile Include="IPosition.cs" />
+        <Compile Include="Position.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>

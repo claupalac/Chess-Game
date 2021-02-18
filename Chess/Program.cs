@@ -6,10 +6,15 @@ namespace Chess
     {
         public static void Main(string[] args)
         {
-            var arr = new int[2];
-            arr[0] = 2;
-            arr[1] = 3;
+            ChessTable chessTable = new ChessTable(8, 8);
+            Game game = new Game(chessTable);
+            IChessman chessman = new King();
+            IPosition position = new Position(0,0);
             
+            game.PutChessmanOnChessTable(chessman,position);
+            game.ShowMoves(chessman);
+            Console.WriteLine(position);
+
         }
     }
 }

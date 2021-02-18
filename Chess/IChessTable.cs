@@ -2,7 +2,7 @@
 {
     public interface IChessTable
     {
-        bool IsValidPosition(int positionX, int positionY);
-        void SetChessman(IChessman chessman, int posX, int posY);
+        bool IsValidPosition(IPosition position);
+        void SetChessman(IChessman chessman, IPosition position);
     }
 }

@@ -2,6 +2,6 @@
 {
     public interface IMove
     {
-        int[] GetMove(int[] originalPosition);
+        IPosition GetMove(IPosition originalPosition);
     }
 }

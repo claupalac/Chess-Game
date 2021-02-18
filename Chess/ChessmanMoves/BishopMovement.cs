@@ -6,25 +6,22 @@ namespace Chess
     {
         public BishopMovement()
         {
-            _myMoves.Add(new MoveForwardRight());
-            _myMoves.Add(new MoveBackwardRight());
-            _myMoves.Add(new MoveBackwardLeft());
-            _myMoves.Add(new MoveForwardLeft());
+            moves.Add(new MoveForwardRight());
+            moves.Add(new MoveBackwardRight());
+            moves.Add(new MoveBackwardLeft());
+            moves.Add(new MoveForwardLeft());
         }
 
-        public override List<ISquare> GetPossibleMoves(IChessman chessman, IChessTable chessTable)
+        public override List<IPosition> GetPossibleMoves(IPosition oPosition, IChessTable chessTable)
         {
-            List<ISquare> possibleMoves = new List<ISquare>();
-
-            foreach (IBasicMove aBasicMove in _myMoves)
+            List<IPosition> possibleMoves = new List<IPosition>();
+            foreach (IMove aBasicMove in moves)
             {
-                ISquare nextPossibleSquare = aBasicMove.GetNextSquare(chessman, chessTable);
-                while (nextPossibleSquare != null)
+                IPosition nextPosition = aBasicMove.GetMove(oPosition);
+                while (chessTable.IsValidPosition(nextPosition))
                 {
-                    possibleMoves.Add(nextPossibleSquare);
-                    Chessman queenShadow = new Queen(new BishopMovement());
-                    queenShadow.MySquare = nextPossibleSquare;
-                    nextPossibleSquare = aBasicMove.GetNextSquare(queenShadow, chessTable);
+                    possibleMoves.Add(nextPosition);
+                    nextPosition = aBasicMove.GetMove(nextPosition);
                 }
             }
             return possibleMoves;
