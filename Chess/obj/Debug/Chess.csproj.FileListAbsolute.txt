@@ -16,3 +16,15 @@ C:/Users/Claudio/RiderProjects/Chess-Game Xunit/Chess/obj/Debug/Chess.pdb
 /Users/claudio/Documents/Rider Projects/Chess-Game/Chess/obj/Debug/Chess.csproj.CoreCompileInputs.cache
 /Users/claudio/Documents/Rider Projects/Chess-Game/Chess/obj/Debug/Chess.exe
 /Users/claudio/Documents/Rider Projects/Chess-Game/Chess/obj/Debug/Chess.pdb
+C:/Users/Claudio/RiderProjects/Chess-Game/Chess/bin/Debug/Chess.exe
+C:/Users/Claudio/RiderProjects/Chess-Game/Chess/bin/Debug/Chess.pdb
+C:/Users/Claudio/RiderProjects/Chess-Game/Chess/obj/Debug/Chess.csprojAssemblyReference.cache
+C:/Users/Claudio/RiderProjects/Chess-Game/Chess/obj/Debug/Chess.csproj.CoreCompileInputs.cache
+C:/Users/Claudio/RiderProjects/Chess-Game/Chess/obj/Debug/Chess.exe
+C:/Users/Claudio/RiderProjects/Chess-Game/Chess/obj/Debug/Chess.pdb
+/Users/claudio/Documents/Rider Projects/Chess-GameNewBranch/Chess/bin/Debug/Chess.exe
+/Users/claudio/Documents/Rider Projects/Chess-GameNewBranch/Chess/bin/Debug/Chess.pdb
+/Users/claudio/Documents/Rider Projects/Chess-GameNewBranch/Chess/obj/Debug/Chess.csprojAssemblyReference.cache
+/Users/claudio/Documents/Rider Projects/Chess-GameNewBranch/Chess/obj/Debug/Chess.csproj.CoreCompileInputs.cache
+/Users/claudio/Documents/Rider Projects/Chess-GameNewBranch/Chess/obj/Debug/Chess.exe
+/Users/claudio/Documents/Rider Projects/Chess-GameNewBranch/Chess/obj/Debug/Chess.pdb

@@ -38,8 +38,7 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="BasicMoves\BasicMove.cs" />
-        <Compile Include="BasicMoves\IBasicMove.cs" />
+        <Compile Include="BasicMoves\IMove.cs" />
         <Compile Include="BasicMoves\KnightBasicMoves\MoveBackwardLeftKnight.cs" />
         <Compile Include="BasicMoves\KnightBasicMoves\MoveBackwardRightKnight.cs" />
         <Compile Include="BasicMoves\KnightBasicMoves\MoveForwardLeftKnight.cs" />
@@ -65,7 +64,6 @@
         <Compile Include="ChessmanMoves\QueenMovement.cs" />
         <Compile Include="ChessmanMoves\RookMovement.cs" />
         <Compile Include="Chessmen\Bishop.cs" />
-        <Compile Include="Chessmen\Chessman.cs" />
         <Compile Include="Chessmen\IChessman.cs" />
         <Compile Include="Chessmen\King.cs" />
         <Compile Include="Chessmen\Knight.cs" />
@@ -75,12 +73,13 @@
         <Compile Include="ChessTable.cs" />
         <Compile Include="Factory\Creator.cs" />
         <Compile Include="Factory\IProduct.cs" />
-        <Compile Include="Factory\SquareCreator.cs" />
-        <Compile Include="ISquare.cs" />
-        <Compile Include="Player.cs" />
+        <Compile Include="Factory\PositionCreator.cs" />
+        <Compile Include="Game.cs" />
+        <Compile Include="IChessTable.cs" />
+        <Compile Include="IPosition.cs" />
+        <Compile Include="Position.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="Square.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

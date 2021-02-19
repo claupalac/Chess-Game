@@ -1,7 +1,10 @@
 namespace Chess
 {
-    public class King : Chessman
+    public class King : IChessman
     {
-        public King() => myMoves = new KingMovement();
+        public IChessmanMovement Play()
+        {
+            return new KingMovement();
+        }
     }
 }

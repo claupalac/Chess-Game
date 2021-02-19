@@ -1,10 +1,10 @@
 namespace Chess
 {
-    public class Queen : Chessman
+    public class Queen : IChessman
     {
-        public Queen()
+        public IChessmanMovement Play()
         {
-            myMoves = new QueenMovement();
+            return new QueenMovement();
         }
     }
 }

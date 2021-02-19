@@ -1,15 +1,13 @@
 ﻿namespace Chess
 {
-    public class MoveRight : BasicMove
+    public class MoveRight : IMove
     {
-        public MoveRight()
+        public IPosition GetMove(IPosition originalPosition)
         {
-            
-        }
-
-        public override void SetChange()
-        {
-            _nextPositionX++;
+            IPosition newPosition = new Position();
+            newPosition.PositionY = originalPosition.PositionY;
+            newPosition.PositionX = originalPosition.PositionX + 1;
+            return newPosition;
         }
     }
 }

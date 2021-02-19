@@ -1,113 +1,69 @@
 ﻿using System;
+using System.Collections.Generic;
 using Chess.Factory;
 
 namespace Chess
 {
-    public interface IChessTable
-    {
-        void SetColumnLimit(int newColumnLimit);
-        void SetRowLimit(int newRowLimit);
-        int GetColumnLimit();
-        int GetRowLimit();
-        bool IsValidPosition(int positionX, int positionY);
-        ISquare PutChessman(Chessman chessman, int positionX, int positionY);
-        ISquare GetSquare(int posX, int posY);
-        
-        
-    }
-
     public class ChessTable : IChessTable
     {
-        private ISquare[,] _chessTable;
+        private readonly IChessman[,] _chessTable;
         private  int _columnLimit;
         private  int _rowLimit;
+        private const int MaxLimitTableSize = 100;
+        private const int MinLimitTableSize = 0;
 
-        public ChessTable(int columnLimit, int rowLimit)
-        {
-            if (!IsValidLimit(columnLimit) || !IsValidLimit(rowLimit))
-            {
-                throw new ArgumentException("Invalid value. Must be 0-99.");
-            }
-            this._columnLimit = columnLimit;
-            this._rowLimit = rowLimit;
-            this._chessTable = new ISquare[columnLimit,rowLimit];
-            FillChessTable();
-        }
+        private int ColumnLimit
+         {
+             get => _columnLimit;
+             set
+             {
+                 if (value < MinLimitTableSize || value > MaxLimitTableSize) throw new ArgumentException("Invalid Value");
+                 _columnLimit = value;
+             }
+         }
 
-        public ChessTable()
-        {
-            
-        }
-
-        public int GetColumnLimit() => _columnLimit;
-        public int GetRowLimit() => _rowLimit;
-
-        public void SetRowLimit(int newRowLimit)
-        {
-            if (!IsValidLimit(newRowLimit))
-            {
-                throw new ArgumentException("Invalid value. Must be 0-99.");
-            }
-            _rowLimit = newRowLimit;
-        }
-        
-        public void SetColumnLimit(int newColumnLimit)
-        {
-            if (!IsValidLimit(newColumnLimit))
-            {
-                throw new ArgumentException("Invalid value. Must be 0-99.");
-            }
-        }
-
-        private void FillChessTable()
-        {
-            for (int i = 0; i < _columnLimit; i++)
-            {
-                for (int j = 0; j < _rowLimit; j++)
+        private int RowLimit
                 {
-                   var aSquare = new SquareCreator().FactoryMethod();
-                   aSquare.PositionX = i;
-                   aSquare.PositionY = j;
-                    _chessTable[i, j] = aSquare;
+                    get => _rowLimit;
+                    set 
+                    {
+                        if (value < MinLimitTableSize || value > MaxLimitTableSize) throw new ArgumentException("Invalid Value");
+                        _rowLimit = value;
+                    }
                 }
-            }
-        }
 
-        public bool IsValidPosition(int positionX, int positionY)
+         public ChessTable(int columnLimit, int rowLimit)
+                {
+                    ColumnLimit = columnLimit;
+                    RowLimit = rowLimit;
+                    _chessTable = new IChessman[ColumnLimit,RowLimit];
+                }
+
+         public ChessTable()
+         {
+             ColumnLimit = 8;
+             RowLimit = 8;
+             _chessTable = new IChessman[ColumnLimit,RowLimit];
+         }
+         
+        public bool IsValidPosition(IPosition position)
         {
-            if (positionX >= 0 && positionX < _columnLimit && positionY < _rowLimit && positionY >= 0)
+            if (position.PositionX >= 0 && position.PositionX < ColumnLimit && position.PositionY < RowLimit && position.PositionY >= 0)
             {
-                return _chessTable[positionX, positionY].IsEmpty();
+                return _chessTable[position.PositionX, position.PositionY] == null;
             }
             else return false;
         }
-
-        public ISquare PutChessman(Chessman chessman, int positionX, int positionY)
+        
+        public void SetChessman(IChessman chessman, IPosition position)
         {
-            if (!IsValidPosition(positionX, positionY) || !_chessTable[positionX, positionY].IsEmpty())
+            if (IsValidPosition(position))
             {
-               throw new ArgumentException("Not valid position");
-            }
-            _chessTable[positionX, positionY].MyChessman = chessman;
-            chessman.MySquare = _chessTable[positionX, positionY];
-            return  _chessTable[positionX, positionY];
-        }
-
-        public ISquare GetSquare(int posX, int posY)
-        {
-            return _chessTable[posX,posY];
-        }
-
-        private bool IsValidLimit(int limit)
-        {
-            if (limit < 100 && limit > 0)
-            {
-                return true;
+                _chessTable[position.PositionX, position.PositionY] = chessman;
             }
             else
-            {
-                return false;
-            }
+                throw new ArgumentException("Invalid action");
         }
+        
     }
 }
